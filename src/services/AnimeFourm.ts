@@ -60,7 +60,18 @@ const AnimeFourm = () => ({
                         })
                     }
                 })
-                .catch((err: any) => console.log(err))
+                .catch((err: any) => {
+                    const owner = client.users.cache.get("547923574833545226");
+
+                    owner?.send({
+                        embeds: [
+                            new EmbedBuilder()
+                            .setColor(0xff0000)
+                            .setTitle(`AnimeFourm Error!`)
+                            .setDescription(`\`\`\`${err}\`\`\``)
+                        ]
+                    })
+                })
             }
         });
     }
