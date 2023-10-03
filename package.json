@@ -12,7 +12,8 @@
     "start": "node dist/src/deploy-commands.js && node dist/src/index.js",
     "dev": "nodemon --watch src --exec ts-node src/index.ts",
     "deploy-commands": "ts-node src/deploy-commands.ts",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
