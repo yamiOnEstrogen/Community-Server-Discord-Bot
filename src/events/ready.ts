@@ -2,6 +2,7 @@ import { Events, ActivityType } from "discord.js";
 import mongoose from "mongoose";
 import webServer from "../wwwroot/webserver";
 import AnimeFourm from "../services/AnimeFourm";
+import CaughtIn4k from "../services/CaughtIn4k";
 const Levels = require("discord.js-leveling");
 
 
@@ -10,6 +11,7 @@ module.exports = {
     once: true,
     async execute(client: any) {
         AnimeFourm().Watch(client);
+        CaughtIn4k().Watch(client);
         console.clear();
         console.log(`Logged in as ${client.user.tag}`);
 
