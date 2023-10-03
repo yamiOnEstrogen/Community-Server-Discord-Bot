@@ -2,14 +2,14 @@
   "name": "community-server-discord-bot",
   "version": "0.0.1",
   "description": "The discord bot for my discord server \"Furry Nation\"",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
   "directories": {
     "doc": "docs",
     "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/src/deploy-commands.js && node dist/src/index.js",
+    "start": "node dist/deploy-commands.js && node dist/index.js",
     "dev": "nodemon --watch src --exec ts-node src/index.ts",
     "deploy-commands": "ts-node src/deploy-commands.ts",
     "postinstall": "npm run build",
