@@ -1,9 +1,9 @@
 import { REST, Routes } from "discord.js";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
-import dotenv from "dotenv";
+import { config } from 'dotenv';
 
-dotenv.config();
+config();
 
 
 const commands = [];
@@ -22,9 +22,9 @@ for (const folder of commandFolders) {
         commands.push(command.data.toJSON());
     }
 }
-const rest = new REST({ version: '10' }).setToken(process.env.token || "");
 
 (async () => {
+    const rest = new REST({ version: '10' }).setToken(process.env.token || "");
     try {
         console.log(`Started refreshing application (/) commands. (${commands.length})`);
 
