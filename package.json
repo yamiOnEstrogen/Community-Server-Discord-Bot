@@ -1,0 +1,54 @@
+{
+  "name": "community-server-discord-bot",
+  "version": "0.0.1",
+  "description": "The discord bot for my discord server \"Furry Nation\"",
+  "main": "dist/src/index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/src/deploy-commands.js && node dist/src/index.js",
+    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "deploy-commands": "ts-node src/deploy-commands.ts",
+    "postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.hylia.dev/community-server-discord-bot"
+  },
+  "author": "0xhylia",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.18",
+    "@types/xml2js": "^0.4.12",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.50.0",
+    "nodemon": "^3.0.1",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^1.6.5",
+    "@discordjs/rest": "^2.0.1",
+    "@octokit/rest": "^20.0.2",
+    "axios": "^1.5.1",
+    "body-parser": "^1.20.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "developer-toolkit-utils": "^1.0.9",
+    "discord-api-types": "^0.37.59",
+    "discord.js": "^14.13.0",
+    "discord.js-leveling": "^5.4.0",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "mal-scraper": "^2.13.1",
+    "mongoose": "^7.5.3",
+    "node-cron": "^3.0.2",
+    "puppeteer": "^21.3.6",
+    "xml2js": "^0.6.2"
+  }
+}
