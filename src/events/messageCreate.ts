@@ -45,36 +45,36 @@ module.exports = {
       }
     }
 
-    const randomAmountOfXp = Math.floor(Math.random() * 50) + 1;;
+    // const randomAmountOfXp = Math.floor(Math.random() * 50) + 1;;
 
-    const hasLeveledUp = await Levels.appendXp(message.member?.id, message.guild?.id, randomAmountOfXp);
+    // const hasLeveledUp = await Levels.appendXp(message.member?.id, message.guild?.id, randomAmountOfXp);
 
-    if (hasLeveledUp) {
-      const user = await Levels.fetch(message.member?.id, message.guild?.id);
-      const LevelRoles = await LevelRolesModel.find({})
+    // if (hasLeveledUp) {
+    //   const user = await Levels.fetch(message.member?.id, message.guild?.id);
+    //   const LevelRoles = await LevelRolesModel.find({})
 
-      const member = message.guild?.members.cache.get(message.member?.id as string);
+    //   const member = message.guild?.members.cache.get(message.member?.id as string);
 
-      const levelUpEmbed = new EmbedBuilder()
-        .setColor(0x0099FF)
-        .setTitle("Level Up!")
-        .setDescription(DEFUALT_LEVEL_UP_MESSAGE.replace("%u", `<@${message.member?.id}>`).replace("%l", user.level.toString()));
+    //   const levelUpEmbed = new EmbedBuilder()
+    //     .setColor(0x0099FF)
+    //     .setTitle("Level Up!")
+    //     .setDescription(DEFUALT_LEVEL_UP_MESSAGE.replace("%u", `<@${message.member?.id}>`).replace("%l", user.level.toString()));
 
 
 
-      for (const role of LevelRoles) {
-        if (user.level.toString() >= role.neededLevel.toString()) {
-          member?.roles.add(role.role);
-        } else {
-          console.log(`User ${message.member?.id} has not reached the level ${role.neededLevel}`);
-        }
-      }
+    //   for (const role of LevelRoles) {
+    //     if (user.level.toString() >= role.neededLevel.toString()) {
+    //       member?.roles.add(role.role);
+    //     } else {
+    //       console.log(`User ${message.member?.id} has not reached the level ${role.neededLevel}`);
+    //     }
+    //   }
 
-      await message.channel.send({ embeds: [levelUpEmbed] }).then((msg: Message) => {
-        setTimeout(() => {
-          msg.delete();
-        }, 5000);
-      })
-    }
+    //   await message.channel.send({ embeds: [levelUpEmbed] }).then((msg: Message) => {
+    //     setTimeout(() => {
+    //       msg.delete();
+    //     }, 5000);
+    //   })
+    // }
   }
 }
